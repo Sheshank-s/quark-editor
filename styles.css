@@ -5,7 +5,8 @@
   height: 95%;
   width: 100%;
   font-size: 15px;
-  font-family: Ubuntu Mono;
+  font-family: monospace;
+  font-weight: 500;
 }
 #parent {
   display: table;
