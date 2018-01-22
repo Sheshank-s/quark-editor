@@ -1,6 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu Mono");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Source Code Pro");
+.modal1 {
+  display: none;
+  z-index:99999;
+  font-family: Roboto;
+}
+.modal1 h1 {
+  font-family: Roboto;
+  font-weight: 500;
+}
+.modal1 {
+  height:75%;
+  margin: 3% auto;
+  max-height: 57em;
+  max-width:66em;
+  width:85%;
+}
+
+.modal1 iframe, .modal1 div{
+  border:none;
+  width:100%;
+  height:100%;
+  }
+
+.close{
+  background-color:turquoise;
+  color:white;
+  font-size:24px;
+  padding:8px 12px;
+  position:absolute;
+  right:0;
+  text-align:center;
+  text-decoration:none;
+  top:0;
+  z-index: 1;
+}
+
 #editor {
   height: 95%;
   width: 100%;
@@ -43,14 +79,14 @@ nav a {
   text-decoration: none;
 }
 
-/* The dropdown container */
-.dropdown {
+/* The dropdown1 container */
+.dropdown1 {
   float: left;
   overflow: hidden;
 }
 
-/* Dropdown button */
-.dropdown .dropbtn {
+/* dropdown1 button */
+.dropdown1 .dropbtn {
   font-size: 16px;
   border: none;
   outline: none;
@@ -59,8 +95,8 @@ nav a {
   background-color: inherit;
 }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
+/* dropdown1 content (hidden by default) */
+.dropdown1-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -69,8 +105,8 @@ nav a {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
+/* Links inside the dropdown1 */
+.dropdown1-content a {
   float: none;
   color: black;
   padding: 12px 16px;
@@ -79,13 +115,13 @@ nav a {
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
+/* Add a grey background color to dropdown1 links on hover */
+.dropdown1-content a:hover {
   background-color: #ddd;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+/* Show the dropdown1 menu on hover */
+.dropdown1:hover .dropdown1-content {
   display: block;
 }
 nav {
@@ -116,4 +152,97 @@ body, html {
 }
 .dropbtn:not(hover) {
   transition: all ease 0.5s;
+}
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:200px;
+  border:none;
+  border-bottom:1px solid #ccc;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#ccc;
+  font-size:15px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-5px;
+  font-size:12px;
+  color:#191919;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:1px;
+  width: 0;
+  bottom:1px;
+  position:absolute;
+  background:#ccc;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  width: 200px;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  /* width:50%; */
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:0px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
 }

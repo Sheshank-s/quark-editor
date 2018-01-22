@@ -13,48 +13,110 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+  <div id="google" class="modal1overlay">
+    <div class="modal1">
+      <a href="javascript:modal1close()" class="close">&times;</a>
+      <div>
+        <h1>Settings:</h1>
+        <hr style="border:none; border-bottom: 2px solid #ccc; " />
+        <p>
+          <div style="display:inline;">Programming Language:</div>
+           &nbsp; &nbsp;
+          <div class="dropdown" style="display:inline;">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">HTML
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:html()">HTML</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:java()">Java</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:python()">Python</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:json()">JSON</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:txt()">Text</a></li>
+            </ul>
+          </div>
+          <br />
+          <br />
+          <div style="display:inline;">Theme:</div>
+           &nbsp; &nbsp;
+          <div class="dropdown" style="display:inline;">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Quark Dark
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:dark()">Quark Dark</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:idle()">Quark Gray</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:blue()">Quark Blue</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:light()">Quark Light</a></li>
+            </ul>
+          </div>
+          <br />
+          <br />
+          <div style="display:inline;">File Name (without extension):</div>
+           &nbsp; &nbsp;
+          <form style="display:inline-block;">
+            <div class="group">
+              <input id="input-fileName" type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label style="font-weight: 300;">File Name</label>
+            </div>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
   <nav id="parent">
     <div id="child">
       <div style="float: left; padding: 10px;padding-bottom: 3px;padding-top:13px;">
-        Quark Editor - By Sheshank Shankar
+        Quark Editor
       </div>
       <div style="float: right;">
 
-        <div class="dropdown">
+        <div class="dropdown1">
           <button class="dropbtn">HTML
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content" id="myDropdown">
+          <div class="dropdown1-content" id="mydropdown1">
             <a href="javascript:html()">HTML</a>
-            <a href="javascript:java()">JAVA</a>
-            <a href="javascript:python()">PYTHON</a>
+            <a href="javascript:java()">Java</a>
+            <a href="javascript:python()">Python</a>
             <a href="javascript:json()">JSON</a>
-            <a href="javascript:txt()">TXT</a>
+            <a href="javascript:txt()">Text</a>
           </div>
         </div>
-        <div class="dropdown" style="margin-right: 100px;">
+        <div class="dropdown1">
           <div class="dropbtn">Select Theme
             <i class="fa fa-caret-down"></i>
           </div>
-          <div class="dropdown-content" id="myDropdown">
+          <div class="dropdown1-content" id="mydropdown1">
             <a href="javascript:dark()">Quark Dark</a>
             <a href="javascript:idle()">Quark Gray</a>
             <a href="javascript:blue()">Quark Blue</a>
             <a href="javascript:light()">Quark Light</a>
           </div>
         </div>
-    </div>
+        <div class="dropdown1 hi" onclick="modal1open()">
+          <div class="dropbtn" id="btn-save" href="javascript:save()">
+            Save
+          </div>
+        </div>
+        <div class="dropdown1 hi" style="margin-right: 100px;" onclick="modal1open()">
+          <div class="dropbtn" href="javascript:modal1open()">
+            <i style="font-size: 20px;" class="fa fa-cog"></i>
+          </div>
+        </div>
+      </div>
 
     </div>
   </nav>
   <table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0">
     <tr style="width: 100%; height: 100%;">
       <td style="height: 100%; width: 50%;">
-          <div id="editor"></div>
+        <div id="editor"></div>
       </td>
       <td style="height: 100%;width: 50%;">
         <div id="output-container">
@@ -73,7 +135,7 @@
       </td>
     </tr>
   </table>
-<script src="ace-builds-master/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds-master/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>
 </body>
