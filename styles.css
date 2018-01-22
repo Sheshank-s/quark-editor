@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu Mono");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Source Code Pro");
+#editor {
+  height: 95%;
+  width: 100%;
+  font-size: 15px;
+  font-family: Ubuntu Mono;
+}
+#parent {
+  display: table;
+  width: 100%;
+  font-size: 16px;
+  font-family: Roboto;
+}
+#child {
+    display: table-cell;
+    vertical-align: middle;
+}
+td {
+  padding: 0px;
+  vertical-align: top;
+  display: inline-block;
+}
+tr, tbody, table {
+  padding: 0px;
+}
+/* Navbar container */
+nav {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+nav a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+nav {
+  height: 5%;
+  color: white;
+  font-family: Consolas;
+  background-color: #00bcd4;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+body, html {
+  margin: 0px;
+  height: 100%;
+  overflow-y:hidden;
+}
+#output-container {
+  border: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 93%;
+}
+
+.dropbtn:hover {
+  background-color: #00A9BE;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.dropbtn:not(hover) {
+  transition: all ease 0.5s;
+}
