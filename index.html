@@ -65,6 +65,16 @@
               <label style="font-weight: 300;">File Name</label>
             </div>
           </form>
+          <br />
+          <div style="display:inline;">Zoom:</div>
+           &nbsp; &nbsp;
+            <div style="display:inline" class="zoomout" onclick="zoomin()">
+             <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+           <input id="zoom" style="display:inline; width: 60px; text-align:center;" type="text" />
+           <div style="display:inline" class="zoomin" onclick="zoomout()">
+             <i class="fa fa-minus" aria-hidden="true"></i>
+           </div>
         </p>
       </div>
     </div>
@@ -80,7 +90,7 @@
           <button class="dropbtn">HTML
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown1-content" id="mydropdown1">
+          <div class="dropdown1-content" style="z-index:999999" id="mydropdown1">
             <a href="javascript:html()">HTML</a>
             <a href="javascript:java()">Java</a>
             <a href="javascript:python()">Python</a>
@@ -88,24 +98,13 @@
             <a href="javascript:txt()">Text</a>
           </div>
         </div>
-        <div class="dropdown1">
-          <div class="dropbtn">Select Theme
-            <i class="fa fa-caret-down"></i>
-          </div>
-          <div class="dropdown1-content" id="mydropdown1">
-            <a href="javascript:dark()">Quark Dark</a>
-            <a href="javascript:idle()">Quark Gray</a>
-            <a href="javascript:blue()">Quark Blue</a>
-            <a href="javascript:light()">Quark Light</a>
-          </div>
-        </div>
-        <div class="dropdown1 hi" onclick="modal1open()">
+        <div class="dropdown1 hi">
           <div class="dropbtn" id="btn-save" href="javascript:save()">
             Save
           </div>
         </div>
-        <div class="dropdown1 hi" style="margin-right: 100px;" onclick="modal1open()">
-          <div class="dropbtn" href="javascript:modal1open()">
+        <div class="dropdown1 hi" style="margin-right: 10px;" onclick="modal1open()">
+          <div class="dropbtn" href="javascript:modalcontrol()">
             <i style="font-size: 20px;" class="fa fa-cog"></i>
           </div>
         </div>
@@ -113,9 +112,8 @@
 
     </div>
   </nav>
-      <div id="editor" style="position: absolute;left: 0;right: 50%;width:50%;height:100%;"></div>
-      <div id="output-container" style="position: absolute;left: 50%;right: 0;width:50%;height:100%;">
-        <iframe style="border:0px; height: 100%; width: 100%;" id="output">
+      <div id="editor"></div>
+        <iframe id="output" seamless="1" frameborder="0">
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -125,7 +123,6 @@
             </body>
           </html>
         </iframe>
-      </div>
   <script src="ace-builds-master/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>

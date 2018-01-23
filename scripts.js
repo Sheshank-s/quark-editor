@@ -27,7 +27,7 @@ editor.setValue(`<!DOCTYPE html>
             text-align: center;
             color: white;
             background-size: 100% 100%;
-            background-image: url("https://images.pexels.com/photos/388830/pexels-photo-388830.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+            background: #363650;
         }
         .paragraph {
             font-family: Source Code Pro;
@@ -53,12 +53,13 @@ start();
 // });
 
 function zoomin() {
-  if (document.getElementById('editor').style.fontSize != "100px") {
+  if (document.getElementById('editor').style.fontSize != "30px") {
     var a = document.getElementById('editor').style.fontSize.substring(0,2);
     console.log(a);
     a++;
     document.getElementById('editor').style.fontSize= a + "px";
   }
+  update();
 }
 function zoomout() {
   if (document.getElementById('editor').style.fontSize != "10px") {
@@ -70,6 +71,7 @@ function zoomout() {
   if (document.getElementById('editor').style.fontSize == "10px") {
     document.getElementById('editor').style.fontSize = "11px";
   }
+  update();
 }
 editor.getSession().on('change', function(e) {
   start();
@@ -142,7 +144,7 @@ function html() {
               text-align: center;
               color: white;
               background-size: 100% 100%;
-              background-image: url("https://images.pexels.com/photos/388830/pexels-photo-388830.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+              background: #363650;
           }
           .paragraph {
               font-family: Source Code Pro;
@@ -232,15 +234,37 @@ function blue() {
   document.getElementById("menu2").innerHTML = `Quark Blue <span class="caret"></span>`;
   editor.setTheme("ace/theme/cobalt");
 }
+var open = false;
 function modal1close() {
-  document.getElementsByClassName("modal1overlay")[0].style.display = "none";
-  document.getElementsByClassName("modal1")[0].style.display = "none";
+  document.getElementsByClassName("modal1overlay")[0].style.visibility = "hidden";
+  document.getElementsByClassName("modal1")[0].style.visibility = "hidden";
+  document.getElementsByClassName("modal1overlay")[0].style.opacity = 0;
+  document.getElementsByClassName("modal1")[0].style.opacity = 0;
+  document.getElementsById("editor").style.position = "absolute";
+  document.getElementsById("output").style.position = "absolute";
+  open = false;
 }
 function modal1open() {
-  document.getElementsByClassName("modal1overlay")[0].style.display = "block";
-  document.getElementsByClassName("modal1")[0].style.display = "block";
+  document.getElementsByClassName("modal1overlay")[0].style.visibility = "visible";
+  document.getElementsByClassName("modal1")[0].style.visibility = "visible";
+  document.getElementsByClassName("modal1overlay")[0].style.opacity = 1;
+  document.getElementsByClassName("modal1")[0].style.opacity = 1;
+  document.getElementById("zoom").value = document.getElementById("editor").style.fontSize;
+  open = true;
 }
 
+function modalcontrol() {
+  if (open) {
+    document.getElementsByClassName("close")[0].click();
+  }
+  else {
+    modal1open();
+  }
+}
+
+function update() {
+  document.getElementById("zoom").value = document.getElementById("editor").style.fontSize;
+}
 
 /* FileSaver.js
  * A saveAs() FileSaver implementation.
