@@ -51,7 +51,23 @@ start();
 //     //console.log(mode)
 //     editor.getSession().setMode(mode);
 // });
+function beautify() {
+  formatCode();
+}
+function formatCode() {
+    var sel = editor.getValue();
+    var session = editor.session;
+    var range = sel.getRange();
 
+    var value = session.getTextRange(range);
+
+    value = doFormatting(value);
+
+    var end = session.diffAndReplace(range, value);
+    sel.setSelectionRange(Range.fromPoints(range.start, end));
+
+    return true;
+}
 function zoomin() {
   if (document.getElementById('editor').style.fontSize != "30px") {
     var a = document.getElementById('editor').style.fontSize.substring(0,2);

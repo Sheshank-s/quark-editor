@@ -8,7 +8,6 @@
   <title>Quark | HTML/CSS/JS Editor</title>
   <meta name="description" content="The Quark Editor: HTML CSS JS">
   <meta name="author" content="Sheshank Shankar">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -114,6 +113,16 @@
             Save
           </div>
         </div>
+        <div class="dropdown1 hi">
+          <a class="dropbtn" href="javascript:beautify()" data-toggle="tooltip" data-placement="top" title="Disfunctional right now">
+            Beautify
+          </a>
+        </div>
+        <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
         <div class="dropdown1 hi" style="margin-right: 10px;" onclick="modal1open()">
           <div class="dropbtn" href="javascript:modalcontrol()">
             <i style="font-size: 20px;" class="fa fa-cog"></i>
