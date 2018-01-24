@@ -177,6 +177,9 @@ body .ace_scrollbar-h {
 .zoomin:hover,.zoomout:hover {
   cursor: pointer;
 }
+#editor {
+  position: fixed;
+}
  .modal1 {
   z-index: 999999999;
   position:absolute;
