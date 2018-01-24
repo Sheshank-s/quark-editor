@@ -43,7 +43,7 @@ editor.setValue(`<!DOCTYPE html>
         </p>
     </body>
 </html>
-`);
+`, cursorPos=-1);
 start();
 
 // $('#mode').on('change', function (ev) {
