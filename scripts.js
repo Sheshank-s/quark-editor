@@ -1,7 +1,7 @@
 var editor = ace.edit("editor");
 var fileExtension = ".html";
 editor.getSession().setUseWorker(false);
-editor.setTheme("ace/theme/monokai");
+editor.setTheme("ace/theme/tomorrow_night");
 editor.getSession().setMode("ace/mode/html");
 document.getElementById('editor').style.fontSize='15px';
 editor.setValue(`<!DOCTYPE html>
@@ -221,6 +221,18 @@ $("#btn-save").click( function() {
 function dark() {
   document.getElementById("menu2").innerHTML = `Quark Dark <span class="caret"></span>`;
   editor.setTheme("ace/theme/monokai");
+}
+function tommorowlight() {
+  document.getElementById("menu2").innerHTML = `Quark Tomorrow Light <span class="caret"></span>`;
+  editor.setTheme("ace/theme/tomorrow");
+}
+function tommorowdark() {
+  document.getElementById("menu2").innerHTML = `Quark Tomorrow Dark <span class="caret"></span>`;
+  editor.setTheme("ace/theme/tomorrow_night");
+}
+function tommorowblue() {
+  document.getElementById("menu2").innerHTML = `Quark Tomorrow Blue <span class="caret"></span>`;
+  editor.setTheme("ace/theme/tomorrow_night_blue");
 }
 function idle() {
   document.getElementById("menu2").innerHTML = `Quark Gray <span class="caret"></span>`;
