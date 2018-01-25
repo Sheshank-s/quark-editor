@@ -51,6 +51,38 @@ start();
 //     //console.log(mode)
 //     editor.getSession().setMode(mode);
 // });
+function horizontal() {
+  document.getElementById("horizontal").style.backgroundColor = "#aaaaaa";
+  document.getElementById("vertical").style.backgroundColor = "#d3d3d3";
+
+  document.getElementById("editor").style.right = 0;
+  document.getElementById("editor").style.bottom = "50%";
+  document.getElementById("editor").style.height = "47%";
+  document.getElementById("editor").style.width = "100%";
+
+  document.getElementById("output").style.left = 0;
+  document.getElementById("output").style.bottom = 0;
+  document.getElementById("output").style.top = "unset";
+  document.getElementById("output").style.height = "46%";
+  document.getElementById("output").style.width = "100%";
+}
+function vertical() {
+  document.getElementById("vertical").style.backgroundColor = "#aaaaaa";
+  document.getElementById("horizontal").style.backgroundColor = "#d3d3d3";
+
+  document.getElementById("editor").style.right = "50%";
+  document.getElementById("editor").style.bottom = 0;
+  document.getElementById("editor").style.height = "95%";
+  document.getElementById("editor").style.width = "50%";
+  document.getElementById("editor").style.left = 0;
+  document.getElementById("editor").style.top = "52.4px";
+
+  document.getElementById("output").style.left = "50%";
+  document.getElementById("output").style.bottom = 0;
+  document.getElementById("output").style.height = "100%";
+  document.getElementById("output").style.width = "50%";
+  document.getElementById("output").style.top = "52.4px";
+}
 function beautify() {
   formatCode();
 }

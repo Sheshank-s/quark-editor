@@ -32,60 +32,79 @@
       <div>
         <h1>Settings:</h1>
         <hr style="border:none; border-bottom: 2px solid #ccc; " />
-        <p>
-          <div style="display:inline;">Programming Language:</div>
-           &nbsp; &nbsp;
-          <div class="dropdown" style="display:inline;">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">HTML
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:html()">HTML</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:java()">Java</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:python()">Python</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:json()">JSON</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:txt()">Text</a></li>
-            </ul>
-          </div>
+        <table>
+          <tr>
+            <td>
+              <p>
+                <div style="display:inline;">Programming Language:</div>
+                 &nbsp; &nbsp;
+                <div class="dropdown" style="display:inline;">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">HTML
+                    <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:html()">HTML</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:java()">Java</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:python()">Python</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:json()">JSON</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:txt()">Text</a></li>
+                  </ul>
+                </div>
+                <br />
+                <br />
+                <div style="display:inline;">Theme:</div>
+                 &nbsp; &nbsp;
+                <div class="dropdown" style="display:inline;">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Quark Tommorow Dark
+                    <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:dark()">Quark Dark</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:idle()">Quark Gray</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:blue()">Quark Blue</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:light()">Quark Light</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowlight()">Quark Tomorrow Light</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowdark()">Quark Tomorrow Dark</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowblue()">Quark Tomorrow Blue</a></li>
+                  </ul>
+                </div>
+                <br />
+                <br />
+                <div style="display:inline;">File Name (without extension):</div>
+                 &nbsp; &nbsp;
+                <form style="display:inline-block;">
+                  <div class="group">
+                    <input id="input-fileName" type="text" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label style="font-weight: 300;">File Name</label>
+                  </div>
+                </form>
+                <br />
+                <div style="display:inline;">Zoom:</div>
+                 &nbsp; &nbsp;
+                  <div style="display:inline" class="zoomout" onclick="zoomin()">
+                   <i class="fa fa-plus" aria-hidden="true"></i>
+                  </div>
+                 <input id="zoom" style="display:inline; width: 60px; text-align:center;" type="text" />
+                 <div style="display:inline" class="zoomin" onclick="zoomout()">
+                   <i class="fa fa-minus" aria-hidden="true"></i>
+                 </div>
+              </p>
+            </td>
+            <td>
+              <p>
+                <div>
+                  Alignment: <div id="horizontal" class="buttonpush" onclick="horizontal()" style="display: inline; margin-right: 0px; border-radius: 5px;">Horizontal</div> <div id="vertical" class="buttonpush" onclick="vertical()" style="display: inline; border-radius: 5px; margin-left: 0px;">Vertical</div>
+                </div>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <Br />
+        <div style="text-align: right; color: #aaaaaa;">
+          Quark Editor is made by <a href="https://sheshank.com">Sheshank Shankar</a> &copy; 2018
           <br />
-          <br />
-          <div style="display:inline;">Theme:</div>
-           &nbsp; &nbsp;
-          <div class="dropdown" style="display:inline;">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Quark Tommorow Dark
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:dark()">Quark Dark</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:idle()">Quark Gray</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:blue()">Quark Blue</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:light()">Quark Light</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowlight()">Quark Tomorrow Light</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowdark()">Quark Tomorrow Dark</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:tommorowblue()">Quark Tomorrow Blue</a></li>
-            </ul>
-          </div>
-          <br />
-          <br />
-          <div style="display:inline;">File Name (without extension):</div>
-           &nbsp; &nbsp;
-          <form style="display:inline-block;">
-            <div class="group">
-              <input id="input-fileName" type="text" required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label style="font-weight: 300;">File Name</label>
-            </div>
-          </form>
-          <br />
-          <div style="display:inline;">Zoom:</div>
-           &nbsp; &nbsp;
-            <div style="display:inline" class="zoomout" onclick="zoomin()">
-             <i class="fa fa-plus" aria-hidden="true"></i>
-            </div>
-           <input id="zoom" style="display:inline; width: 60px; text-align:center;" type="text" />
-           <div style="display:inline" class="zoomin" onclick="zoomout()">
-             <i class="fa fa-minus" aria-hidden="true"></i>
-           </div>
-        </p>
+          Our <i class="fa fa-code" aria-hidden="true"></i> is open-source. View <a href="https://github.com/GreenBayRules/quark-editor">here</a>.
+        </div>
       </div>
     </div>
   </div>

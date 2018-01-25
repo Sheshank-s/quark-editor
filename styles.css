@@ -23,7 +23,14 @@
   width:100%;
   height:100%;
   }
-
+.buttonpush {
+  padding: 7px;
+  background-color: #d3d3d3;
+}
+.buttonpush:hover {
+  background-color: #bdbdbd;
+  cursor: pointer;
+}
 .close{
   background-color:turquoise;
   color:white;
