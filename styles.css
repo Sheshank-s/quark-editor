@@ -17,7 +17,18 @@
   max-width:66em;
   width:85%;
 }
-
+#enable {
+  padding: 7px;
+  background-color: #d1d1d1;
+  border-radius: 5px;
+}
+#enable:hover {
+  background-color: #bdbdbd;
+  cursor: pointer;
+}
+.dropbtn {
+  opacity: 0.6;
+}
 .modal1 iframe, .modal1 div{
   border:none;
   width:100%;
@@ -219,9 +230,13 @@ body .ace_scrollbar-h {
 }
 
 .dropbtn:hover {
-  background-color: #00A9BE;
+  opacity: 1;
   transition: all ease 0.5s;
   cursor: pointer;
+  border-bottom: 5px solid white;
+}
+#drop:hover {
+  border-bottom: none;
 }
 .dropbtn:not(hover) {
   transition: all ease 0.5s;

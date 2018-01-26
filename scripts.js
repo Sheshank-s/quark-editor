@@ -51,6 +51,25 @@ start();
 //     //console.log(mode)
 //     editor.getSession().setMode(mode);
 // });
+function togglepreview() {
+  if (document.getElementById("editor").style.width == "100%" && document.getElementById("editor").style.height == "95%"){
+    removepreview();
+  }
+  else {
+    addpreview();
+  }
+}
+function addpreview() {
+  document.getElementById("output").style.display = "none";
+  document.getElementById("editor").style.width = "100%";
+  document.getElementById("editor").style.height = "95%";
+  document.getElementById("enable").innerText = "Enable";
+}
+function removepreview() {
+  document.getElementById("output").style.display = "block";
+  document.getElementById("enable").innerText = "Disable";
+  vertical();
+}
 function horizontal() {
   document.getElementById("horizontal").style.backgroundColor = "#aaaaaa";
   document.getElementById("vertical").style.backgroundColor = "#d3d3d3";

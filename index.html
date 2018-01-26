@@ -94,6 +94,12 @@
               <p>
                 <div>
                   Alignment: <div id="horizontal" class="buttonpush" onclick="horizontal()" style="display: inline; margin-right: 0px; border-radius: 5px;">Horizontal</div> <div id="vertical" class="buttonpush" onclick="vertical()" style="display: inline; border-radius: 5px; margin-left: 0px;">Vertical</div>
+                  <br />
+                  <Br />
+                  Toggle Preview:
+                  <div id="enable" style="display:inline;" title="reccommended for HTML only" class="toggle" onclick="togglepreview()" data-toggle="tooltip" data-placement="top">
+                    Disable
+                  </div>
                 </div>
               </p>
             </td>
@@ -115,8 +121,10 @@
       </div>
       <div style="float: right;">
 
+        <div class="dropdown1 hi">
+        </div>
         <div class="dropdown1">
-          <button class="dropbtn">HTML
+          <button class="dropbtn" id="drop">HTML
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown1-content" style="z-index:999999" id="mydropdown1">
@@ -133,9 +141,9 @@
           </div>
         </div>
         <div class="dropdown1 hi">
-          <a class="dropbtn" href="javascript:beautify()" data-toggle="tooltip" data-placement="top" title="Disfunctional right now">
+          <div class="dropbtn" href="javascript:beautify()" data-toggle="tooltip" data-placement="top" title="Disfunctional right now">
             Beautify
-          </a>
+          </div>
         </div>
         <script>
         $(document).ready(function(){
