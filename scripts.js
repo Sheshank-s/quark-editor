@@ -102,23 +102,6 @@ function vertical() {
   document.getElementById("output").style.width = "50%";
   document.getElementById("output").style.top = "52.4px";
 }
-function beautify() {
-  formatCode();
-}
-function formatCode() {
-    var sel = editor.getValue();
-    var session = editor.session;
-    var range = sel.getRange();
-
-    var value = session.getTextRange(range);
-
-    value = doFormatting(value);
-
-    var end = session.diffAndReplace(range, value);
-    sel.setSelectionRange(Range.fromPoints(range.start, end));
-
-    return true;
-}
 function zoomin() {
   if (document.getElementById('editor').style.fontSize != "30px") {
     var a = document.getElementById('editor').style.fontSize.substring(0,2);
@@ -151,6 +134,9 @@ function start () {
   $("body", target).append(html);
 }
 function json() {
+  document.getElementById("output").style.display = "none";
+  document.getElementById("editor").style.width = "100%";
+  document.getElementById("editor").style.height = "95%";
   fileExtension = ".json";
   document.getElementsByClassName('dropbtn')[0].innerHTML = 'JSON <i class="fa fa-caret-down"></i>';
   editor.getSession().setMode("ace/mode/json");
@@ -175,6 +161,9 @@ function json() {
 }`);
 }
 function txt() {
+  document.getElementById("output").style.display = "none";
+  document.getElementById("editor").style.width = "100%";
+  document.getElementById("editor").style.height = "95%";
   fileExtension = ".txt";
   document.getElementsByClassName('dropbtn')[0].innerHTML = 'TXT <i class="fa fa-caret-down"></i>';
   document.getElementById("menu1").innerHTML = `Text <span class="caret"></span>`;
@@ -183,6 +172,7 @@ function txt() {
     Here is some more text`);
 }
 function html() {
+  removepreview();
   fileExtension = ".html";
   document.getElementsByClassName('dropbtn')[0].innerHTML = 'HTML <i class="fa fa-caret-down"></i>';
   editor.getSession().setMode("ace/mode/html");
@@ -230,7 +220,11 @@ function html() {
   `);
 }
 function python() {
+  document.getElementById("output").style.display = "none";
+  document.getElementById("editor").style.width = "100%";
+  document.getElementById("editor").style.height = "95%";
   fileExtension = ".py";
+
   document.getElementsByClassName('dropbtn')[0].innerHTML = 'PYTHON <i class="fa fa-caret-down"></i>';
   editor.getSession().setMode("ace/mode/python");
   document.getElementById("menu1").innerHTML = `Python <span class="caret"></span>`;
@@ -250,6 +244,9 @@ else:
    print("The factorial of",num,"is",factorial)`);
 }
 function java() {
+  document.getElementById("output").style.display = "none";
+  document.getElementById("editor").style.width = "100%";
+  document.getElementById("editor").style.height = "95%";
   fileExtension = ".java";
   document.getElementById("menu1").innerHTML = `Java <span class="caret"></span>`;
   document.getElementsByClassName('dropbtn')[0].innerHTML = 'JAVA <i class="fa fa-caret-down"></i>';
@@ -529,4 +526,42 @@ if (typeof module !== "undefined" && module.exports) {
 	define("FileSaver.js", function() {
 		return saveAs;
 	});
+}
+
+/* Beautify Code */
+
+function process(str) {
+
+    var div = document.createElement('div');
+    div.innerHTML = str.trim();
+
+    return format(div, 0).innerHTML;
+}
+
+function format(node, level) {
+
+    var indentBefore = new Array(level++ + 1).join('  '),
+        indentAfter  = new Array(level - 1).join('  '),
+        textNode;
+
+    for (var i = 0; i < node.children.length; i++) {
+
+        textNode = document.createTextNode('\n' + indentBefore);
+        node.insertBefore(textNode, node.children[i]);
+
+        format(node.children[i], level);
+
+        if (node.lastElementChild == node.children[i]) {
+            textNode = document.createTextNode('\n' + indentAfter);
+            node.appendChild(textNode);
+        }
+    }
+
+    return node;
+}
+
+function beautify() {
+  if (editor.session.getMode().$id == "ace/mode/html") {
+    editor.setValue(process(editor.getValue()));
+  }
 }
