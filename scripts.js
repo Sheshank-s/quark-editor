@@ -4,6 +4,7 @@ editor.getSession().setUseWorker(false);
 editor.setTheme("ace/theme/tomorrow_night");
 editor.getSession().setMode("ace/mode/html");
 document.getElementById('editor').style.fontSize='15px';
+ace.require("ace/ext/language_tools");
 editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
