@@ -4,6 +4,11 @@ editor.getSession().setUseWorker(false);
 editor.setTheme("ace/theme/tomorrow_night");
 editor.getSession().setMode("ace/mode/html");
 document.getElementById('editor').style.fontSize='15px';
+editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
 editor.setValue(`<!DOCTYPE html>
 <html>
     <head>
