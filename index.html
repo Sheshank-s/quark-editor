@@ -173,9 +173,24 @@
             </body>
           </html>
         </iframe>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBEvkNVTDmj1gKc_TW0LrY23ndlXv0q434",
+    authDomain: "quark-editor.firebaseapp.com",
+    databaseURL: "https://quark-editor.firebaseio.com",
+    projectId: "quark-editor",
+    storageBucket: "",
+    messagingSenderId: "806586389975"
+  };
+  firebase.initializeApp(config);
+</script>
   <script src="ace-builds-master/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>
+  <script src="database.js"></script>
 <script src="ace-builds-master/src/ext-language_tools.js"></script>
 </body>
 
